@@ -32,6 +32,26 @@ Minimal, functional Elasticsearch integration example in Scala (using the Java H
 
 It will index a sample legacy order and search for shipped ones.
 
+## Running the tests
+
+**Português:**
+
+```bash
+sbt test
+```
+
+O teste unitário básico (ScalaTest) cobre a construção do documento de "legacy order". Não requer Elasticsearch rodando (usa função pura extraída para testabilidade).
+
+**English:**
+
+```bash
+sbt test
+```
+
+The basic unit test (ScalaTest) covers building the legacy order document. It does not require a running Elasticsearch instance (uses an extracted pure function for testability).
+
+Note: The full example in `sbt run` needs `docker-compose up -d` for a live ES.
+
 ## Extend for Real Use
 
 - Replace the hardcoded doc with data from legacy DB (JDBC, Play Anorm, etc.).
