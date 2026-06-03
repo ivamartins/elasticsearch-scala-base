@@ -27,6 +27,11 @@ import java.util
  *
  * Run: sbt run
  * Requires Elasticsearch running (use docker-compose or local).
+ *
+ * PT: Base funcional para integração com Elasticsearch em Scala.
+ * Demonstra indexação e busca, típica para plataformas de alto volume, observability e features de busca em modernização de legados.
+ * Estenda com bulk indexing de DBs legados, sync real-time com Kafka/Flink, busca semântica com IA, pipelines de migração de dados legados.
+ * Rode com sbt run após subir ES via docker-compose.
  */
 object EsIntegrationExample {
   def main(args: Array[String]): Unit = {
