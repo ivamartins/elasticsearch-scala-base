@@ -41,13 +41,7 @@ object EsIntegrationExample {
 
     try {
       // Index a sample "legacy" document (e.g. from old Play/Java system)
-      val doc = new util.HashMap[String, AnyRef]()
-      doc.put("id", "order-123")
-      doc.put("customer", "ACME Ltd")
-      doc.put("amount", Double.box(1250.75))
-      doc.put("status", "shipped")
-      doc.put("legacySource", "old-play-ecommerce-v1")
-      doc.put("timestamp", Long.box(System.currentTimeMillis()))
+      val doc = buildLegacyOrderDoc("order-123", "ACME Ltd", 1250.75, "shipped", "old-play-ecommerce-v1")
 
       val indexRequest = new IndexRequest("legacy-orders")
         .id("order-123")
@@ -72,5 +66,20 @@ object EsIntegrationExample {
     } finally {
       client.close()
     }
+  }
+
+  /**
+   * Extracted for unit testing. Builds a sample legacy order doc.
+   * In real: map from legacy data model, add enrichment.
+   */
+  def buildLegacyOrderDoc(id: String, customer: String, amount: Double, status: String, legacySource: String): java.util.Map[String, AnyRef] = {
+    val doc = new util.HashMap[String, AnyRef]()
+    doc.put("id", id)
+    doc.put("customer", customer)
+    doc.put("amount", Double.box(amount))
+    doc.put("status", status)
+    doc.put("legacySource", legacySource)
+    doc.put("timestamp", Long.box(System.currentTimeMillis()))
+    doc
   }
 }
