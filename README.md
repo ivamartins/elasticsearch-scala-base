@@ -1,0 +1,43 @@
+# elasticsearch-scala-base
+
+Minimal, functional Elasticsearch integration example in Scala (using the Java High Level REST Client).
+
+**This is a core framework example for search, indexing, and observability in high-volume platforms.**
+
+## Why this base?
+- Directly supports services: "Elasticsearch" for search, indexing and observability in high-volume platforms.
+- Functional example of ingesting "legacy" data and querying it – perfect for modernization projects where you need to add modern search on top of old systems.
+- Easy to extend with Flink/Kafka streams (see flink-kafka-scala-base), AI semantic search, bulk migrations, etc.
+
+## Quick Start (Functional)
+
+1. Start Elasticsearch:
+   ```bash
+   docker-compose up -d
+   ```
+
+2. Run the example:
+   ```bash
+   sbt run
+   ```
+
+It will index a sample legacy order and search for shipped ones.
+
+## Extend for Real Use
+
+- Replace the hardcoded doc with data from legacy DB (JDBC, Play Anorm, etc.).
+- Use BulkProcessor for high volume.
+- Add Kafka consumer to index events in real time.
+- Integrate with AI: generate embeddings for semantic search.
+- Add security, TLS, multiple indices for different legacy sources.
+
+## Portfolio Mapping
+
+This project demonstrates practical experience with Elasticsearch in enterprise environments for search and observability layers on top of legacy and modern backends.
+
+See the full set of base projects and services:
+https://ivamartins.github.io/code-solutions-site/
+
+Company: https://www.linkedin.com/company/code-solutions-it/
+
+Clone this, adapt the client config and mappings to your domain, and you have a solid, production-oriented starting point for search features in modernization or new platforms.
