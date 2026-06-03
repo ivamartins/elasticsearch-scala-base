@@ -18,19 +18,43 @@ Minimal, functional Elasticsearch integration example in Scala (using the Java H
 - Functional example of ingesting "legacy" data and querying it – perfect for modernization projects where you need to add modern search on top of old systems.
 - Easy to extend with Flink/Kafka streams (see flink-kafka-scala-base), AI semantic search, bulk migrations, etc.
 
-## Quick Start (Functional)
+## Quick Start / Como rodar a aplicação
+
+**Pré-requisitos:** Java + sbt + Docker (para rodar o Elasticsearch).
+
+**Passo a passo:**
+
+1. Inicie o Elasticsearch:
+   ```bash
+   docker-compose up -d
+   ```
+   Aguarde alguns segundos até o container estar saudável.
+
+2. Rode o exemplo:
+   ```bash
+   sbt run
+   ```
+
+Ele vai indexar um documento de "pedido legado" de exemplo e fazer uma busca por pedidos "shipped".
+
+**English:**
+
+**Prerequisites:** Java + sbt + Docker (to run Elasticsearch).
+
+**Step by step:**
 
 1. Start Elasticsearch:
    ```bash
    docker-compose up -d
    ```
+   Wait a few seconds until the container is healthy.
 
 2. Run the example:
    ```bash
    sbt run
    ```
 
-It will index a sample legacy order and search for shipped ones.
+It will index a sample "legacy order" document and search for shipped ones.
 
 ## Running the tests
 
