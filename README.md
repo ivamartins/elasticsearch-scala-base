@@ -1,5 +1,14 @@
 # elasticsearch-scala-base
 
+Exemplo funcional mínimo de integração com Elasticsearch em Scala (usando o Java High Level REST Client).
+
+**Este é um exemplo de framework principal para search, indexing e observability em plataformas de alto volume.**
+
+**Português (resumo):**
+Suporta serviços de "Elasticsearch" para busca, indexação e observabilidade em plataformas de alto volume. Exemplo funcional de ingestão de dados "legados" e consulta – perfeito para projetos de modernização onde você precisa adicionar busca moderna sobre sistemas antigos. Fácil de estender com streams Flink/Kafka (veja flink-kafka-scala-base), busca semântica com IA, migrações bulk, etc.
+
+**English:**
+
 Minimal, functional Elasticsearch integration example in Scala (using the Java High Level REST Client).
 
 **This is a core framework example for search, indexing, and observability in high-volume platforms.**
